@@ -116,7 +116,7 @@
     (if (list? settings)
         (map normalize-configuration-item settings)
         (normalize-configuration-item settings)))
-  (match settings
+  (match normalized
     [(as-Langserver-Settings-Update value)
      (begin
        (eprintf "==========AS-LANGUAGE_SETTINGS-UPDATE ~a " value)
