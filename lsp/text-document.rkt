@@ -32,7 +32,10 @@
                         #:items (list (ConfigurationItem
                                         #:scopeUri uri
                                         #:section "racket-langserver"))))
-                    update-configuration)))
+                    (lambda (setting) (begin
+                                        (eprintf "RECEIVED FROM workspace/configuration ~a" setting)
+                                        (update-configuration setting)))
+                    )))
 
 ;;
 ;; Methods
